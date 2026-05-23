@@ -37,4 +37,4 @@ A modern and responsive developer portfolio built using React, Vite, and Tailwin
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/SrishtiDev/Portfolio.git
