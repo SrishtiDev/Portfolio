@@ -4,20 +4,9 @@ import { FolderGit2, ExternalLink, Layers, Server, Terminal, Code } from 'lucide
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const filters = ['All', 'Full Stack', 'Spring Boot', 'React.js'];
+  const filters = ['All', 'Spring Boot', 'React.js', 'NEXT.JS'];
 
   const projectsData = [
-    {
-      title: 'EduFlex - Learning Platform',
-      description: 'A comprehensive, full-stack learning management platform allowing instructors to create dynamic multimedia courses, track student enrollment, and measure course consumption metrics.',
-      category: 'Full Stack',
-      tags: ['Spring Boot', 'React.js', 'Spring Security', 'JWT', 'PostgreSQL', 'Tailwind CSS'],
-      githubLink: 'https://github.com',
-      liveLink: 'https://google.com',
-      backendHighlight: 'Engineered role-based authentication with Spring Security and JWT, protecting API endpoints and managing course content models.',
-      frontendHighlight: 'Implemented interactive course-creation dashboards and modern grid layouts that track real-time video progress.',
-      icon: <Server className="text-indigo-400" size={24} />
-    },
     {
       title: 'ShopVibe - E-Commerce Microservices',
       description: 'A scalable distributed e-commerce architecture utilizing cloud routing, load balancing, and high-performance caching for dynamic catalog search, cart operations, and order flows.',
@@ -30,25 +19,16 @@ const Projects = () => {
       icon: <Terminal className="text-emerald-400" size={24} />
     },
     {
-      title: 'AgileFlow - Live Kanban Board',
-      description: 'A real-time workspace collaboration tool with drag-and-drop mechanics, workspace sharing, task assignments, and active board logs.',
-      category: 'Full Stack',
-      tags: ['Spring Boot', 'WebSockets', 'React.js', 'React DnD', 'MongoDB', 'Tailwind CSS'],
-      githubLink: 'https://github.com',
-      liveLink: 'https://google.com',
-      backendHighlight: 'Developed real-time push events utilizing Spring WebSockets, syncing board positions instantly across authenticated team members.',
-      frontendHighlight: 'Engineered interactive fluid card drag-and-drop boundaries using React DnD and custom UI modals.',
-      icon: <Layers className="text-violet-400" size={24} />
-    },
-    {
-      title: 'DevShell - Responsive Portfolio',
-      description: 'A highly optimized, premium developer portfolio website featuring visual glassmorphism, responsive navigation models, and interactive layouts.',
-      category: 'React.js',
-      tags: ['React.js', 'Vite', 'Tailwind CSS', 'Lucide Icons', 'SEO Optimized'],
-      githubLink: 'https://github.com',
-      liveLink: 'https://google.com',
-      backendHighlight: 'Utilized static deployment patterns with single-page routing structures, maximizing client rendering response time.',
-      frontendHighlight: 'Created CSS keyframes, interactive filter panels, and responsive grid layouts using pure Tailwind CSS utility rules.',
+      title: 'DEA (Discovery & Execution Assistant)',
+      description: 'An intelligence engine that takes your tech stack and interests and delivers tailored AI-generated project ideas, live trending project types across industries (FinTech, Cyber, Cloud & more), and full architecture breakdowns with implementation roadmaps.',
+      category: 'NEXT.JS',
+      tags: ['Next.js 15', 'React 19', 'Tailwind CSS v4', 'Framer Motion', 'NVIDIA NIM API'],
+      githubLink: 'https://github.com/SrishtiDev/IDEA',
+      liveLink: 'https://idea-gamma-azure.vercel.app/',
+      backendLabel: 'THE DIFFERENTIATOR',
+      backendHighlight: 'Integrated NVIDIA NIM reasoning models (GLM-4.7 & MiniMax-M2) directly into the backend — they reason through your stack before producing structured, actionable output. Results feel like a senior dev thinking it through with you, not generic GPT suggestions.',
+      frontendLabel: 'UI LAYER',
+      frontendHighlight: 'Glassmorphism + parallax UI built with Tailwind CSS v4 and Framer Motion. Server-side API routes keep all keys secure with zero client-side exposure.',
       icon: <Code className="text-amber-400" size={24} />
     }
   ];
@@ -153,11 +133,15 @@ const Projects = () => {
                 {/* Split highlights */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-2 border-y border-gray-900/80">
                   <div className="text-left space-y-1">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-400">Backend Blueprint</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-400">
+                      {project.backendLabel || 'Backend Blueprint'}
+                    </h4>
                     <p className="text-xs text-gray-400 leading-normal">{project.backendHighlight}</p>
                   </div>
                   <div className="text-left space-y-1">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-violet-400">Frontend Blueprint</h4>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-violet-400">
+                      {project.frontendLabel || 'Frontend Blueprint'}
+                    </h4>
                     <p className="text-xs text-gray-400 leading-normal">{project.frontendHighlight}</p>
                   </div>
                 </div>

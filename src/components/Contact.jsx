@@ -48,7 +48,7 @@ const Contact = () => {
           </h2>
           <div className="h-1 w-20 bg-indigo-500 rounded mt-4 mx-auto" />
           <p className="text-gray-400 max-w-2xl mx-auto mt-6 text-sm sm:text-base leading-relaxed">
-            I am currently looking for Software Development Engineer (SDE) or Full Stack Developer roles. Feel free to reach out with any job opportunities, collaboration projects, or just to say hello!
+            I am currently looking for Software Development Engineer (SDE) or Full Stack Developer roles. I’d love to connect regarding job opportunities, collaboration projects, or even just to say hello!
           </p>
         </div>
 
@@ -66,7 +66,7 @@ const Contact = () => {
               {/* Channels */}
               <div className="space-y-4 pt-4">
                 <a 
-                  href="mailto:srishti.rawat@email.com" 
+                  href="mailto:rawat.srishti1010@gmail.com" 
                   className="flex items-center gap-4 p-4 rounded-xl glassmorphism-card border border-gray-800/80 text-gray-400 hover:text-indigo-400 transition-all duration-200"
                 >
                   <div className="p-2.5 bg-gray-900 border border-gray-800 rounded-lg text-indigo-400 shrink-0">
@@ -74,12 +74,12 @@ const Contact = () => {
                   </div>
                   <div className="text-left">
                     <h4 className="text-white font-semibold text-xs uppercase tracking-wider">Email Address</h4>
-                    <p className="text-sm mt-0.5 font-medium break-all">srishti.rawat@email.com</p>
+                    <p className="text-sm mt-0.5 font-medium break-all">rawat.srishti1010@gmail.com</p>
                   </div>
                 </a>
 
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/srishtirwt/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-4 p-4 rounded-xl glassmorphism-card border border-gray-800/80 text-gray-400 hover:text-indigo-400 transition-all duration-200"
@@ -93,12 +93,12 @@ const Contact = () => {
                   </div>
                   <div className="text-left">
                     <h4 className="text-white font-semibold text-xs uppercase tracking-wider">LinkedIn</h4>
-                    <p className="text-sm mt-0.5 font-medium">linkedin.com/in/srishti-rawat</p>
+                    <p className="text-sm mt-0.5 font-medium">www.linkedin.com/in/srishtirwt/</p>
                   </div>
                 </a>
 
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/SrishtiDev" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-4 p-4 rounded-xl glassmorphism-card border border-gray-800/80 text-gray-400 hover:text-indigo-400 transition-all duration-200"
@@ -111,7 +111,7 @@ const Contact = () => {
                   </div>
                   <div className="text-left">
                     <h4 className="text-white font-semibold text-xs uppercase tracking-wider">GitHub</h4>
-                    <p className="text-sm mt-0.5 font-medium">github.com/srishti-rawat</p>
+                    <p className="text-sm mt-0.5 font-medium">github.com/SrishtiDev</p>
                   </div>
                 </a>
               </div>

@@ -60,7 +60,7 @@ const Footer = () => {
               </svg>
             </a>
             <a 
-              href="mailto:srishti.rawat@email.com" 
+              href="mailto:rawat.srishti1010@gmail.com" 
               className="p-3 rounded-xl bg-gray-900 border border-gray-800/80 text-gray-400 hover:text-indigo-400 hover:border-indigo-500/30 transition-all duration-200"
               title="Send Email"
             >
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Details Row */}
-          <div className="pt-8 border-t border-gray-900 w-full max-w-xl text-center space-y-2">
+          {/* <div className="pt-8 border-t border-gray-900 w-full max-w-xl text-center space-y-2">
             <p className="text-gray-500 text-xs flex items-center justify-center gap-1.5">
               <span>Made with</span>
               <Heart size={12} className="text-rose-500 fill-rose-500" />
@@ -78,7 +78,7 @@ const Footer = () => {
             <p className="text-gray-500 text-xs">
               &copy; {currentYear} Srishti Rawat. All rights reserved.
             </p>
-          </div>
+          </div> */}
         </div>
 
       </div>

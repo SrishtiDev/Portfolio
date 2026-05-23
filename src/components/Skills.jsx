@@ -115,18 +115,7 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Continuous learning card */}
-        <div className="mt-12 p-6 sm:p-8 rounded-2xl glassmorphism border border-indigo-500/10 flex flex-col md:flex-row items-center gap-6 max-w-4xl mx-auto">
-          <div className="p-4 bg-indigo-500/10 rounded-2xl border border-indigo-500/20 text-indigo-400 shrink-0">
-            <ShieldCheck size={32} />
-          </div>
-          <div className="text-left space-y-2">
-            <h4 className="text-white font-bold text-lg">Engineering Best Practices</h4>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              I am highly dedicated to creating codebases that are maintainable and scalable. I actively study software engineering paradigms including Model-View-Controller (MVC), Clean Architecture, Test-Driven Development (TDD), and DRY/KISS design methodologies.
-            </p>
-          </div>
-        </div>
+
 
       </div>
     </section>

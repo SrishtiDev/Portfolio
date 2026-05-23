@@ -46,7 +46,7 @@ const About = () => {
           {/* Biography Text (Right Column - 7 cols) */}
           <div className="lg:col-span-7 space-y-6 text-left">
             <h3 className="text-2xl font-bold text-white">
-              Aspiring Software Engineer based in Ghaziabad, UP.
+              Aspiring Software Engineer
             </h3>
             
             <p className="text-gray-400 leading-relaxed">
