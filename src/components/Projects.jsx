@@ -1,169 +1,79 @@
-import React, { useState } from 'react';
-import { FolderGit2, ExternalLink, Layers, Server, Terminal, Code } from 'lucide-react';
+import React from 'react';
 
-const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
-
-  const filters = ['All', 'Spring Boot', 'React.js', 'NEXT.JS'];
-
-  const projectsData = [
-    {
-      title: 'ShopVibe - E-Commerce Microservices',
-      description: 'A scalable distributed e-commerce architecture utilizing cloud routing, load balancing, and high-performance caching for dynamic catalog search, cart operations, and order flows.',
-      category: 'Spring Boot',
-      tags: ['Spring Boot', 'Microservices', 'Eureka', 'API Gateway', 'Redis', 'MySQL', 'React.js'],
-      githubLink: 'https://github.com',
-      liveLink: 'https://google.com',
-      backendHighlight: 'Built as independent microservices integrated through Spring Cloud Gateway and Netflix Eureka. Cached dynamic products using Redis.',
-      frontendHighlight: 'Created full cart flows, payment integration models, and responsive client state using Redux Toolkit.',
-      icon: <Terminal className="text-emerald-400" size={24} />
-    },
-    {
-      title: 'DEA (Discovery & Execution Assistant)',
-      description: 'An intelligence engine that takes your tech stack and interests and delivers tailored AI-generated project ideas, live trending project types across industries (FinTech, Cyber, Cloud & more), and full architecture breakdowns with implementation roadmaps.',
-      category: 'NEXT.JS',
-      tags: ['Next.js 15', 'React 19', 'Tailwind CSS v4', 'Framer Motion', 'NVIDIA NIM API'],
-      githubLink: 'https://github.com/SrishtiDev/IDEA',
-      liveLink: 'https://idea-gamma-azure.vercel.app/',
-      backendLabel: 'THE DIFFERENTIATOR',
-      backendHighlight: 'Integrated NVIDIA NIM reasoning models (GLM-4.7 & MiniMax-M2) directly into the backend — they reason through your stack before producing structured, actionable output. Results feel like a senior dev thinking it through with you, not generic GPT suggestions.',
-      frontendLabel: 'UI LAYER',
-      frontendHighlight: 'Glassmorphism + parallax UI built with Tailwind CSS v4 and Framer Motion. Server-side API routes keep all keys secure with zero client-side exposure.',
-      icon: <Code className="text-amber-400" size={24} />
-    }
-  ];
-
-  const filteredProjects = activeFilter === 'All'
-    ? projectsData
-    : projectsData.filter(p => p.category === activeFilter || p.tags.includes(activeFilter));
-
+const Project = ({ position = 'left', title, description, tags, link }) => {
+  const isLeft = position === 'left';
+  
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
-      {/* Background circles */}
-      <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] bg-violet-600/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/4 w-[300px] h-[300px] bg-indigo-600/5 rounded-full blur-[100px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-indigo-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            <FolderGit2 size={16} />
-            My Portfolio
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Featured Full-Stack Work
-          </h2>
-          <div className="h-1 w-20 bg-indigo-500 rounded mt-4 mx-auto" />
-          <p className="text-gray-400 max-w-2xl mx-auto mt-6 text-sm sm:text-base leading-relaxed">
-            A showcase of my recent full-stack accomplishments. Bridging Enterprise Spring Boot backends and dynamic React frontends.
-          </p>
+    <div className={`mb-10 flex h-fit w-full flex-col justify-center px-6 lg:px-20 ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+      
+      {/* 3D Image Container */}
+      <div className="group relative mb-5 flex aspect-video w-full lg:w-1/2 [perspective:800px] lg:mb-0 lg:ml-auto">
+        {/* We use a colored gradient placeholder instead of an image to match the dark theme */}
+        <div className={`absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-gray-700 bg-gradient-to-br from-[#202020] to-[#101010] opacity-50 transition-transform duration-500 ease-in-out group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] group-hover:rotate-x-0 group-hover:rotate-y-0 group-hover:translate-z-0 ${isLeft ? 'translate-x-[calc(-50%+15px)] rotate-y-6' : 'translate-x-[calc(-50%-15px)] -rotate-y-6'}`} />
+        <div className={`absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-gray-600 bg-gradient-to-br from-[#303030] to-[#181818] opacity-100 flex items-center justify-center transition-transform duration-500 ease-in-out group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] group-hover:rotate-x-0 group-hover:rotate-y-0 group-hover:translate-z-0 ${isLeft ? 'translate-x-[calc(-50%+25px)] translate-y-[calc(-50%+10px)] rotate-y-6 translate-z-[-20px]' : 'translate-x-[calc(-50%-25px)] translate-y-[calc(-50%+10px)] -rotate-y-6 translate-z-[-20px]'}`}>
+          <h3 className="text-2xl font-black text-gray-500 uppercase tracking-widest">{title}</h3>
         </div>
 
-        {/* Filter Toolbar */}
-        <div className="flex flex-wrap justify-center items-center gap-2 mb-12 max-w-lg mx-auto p-1.5 rounded-2xl bg-gray-900/60 border border-gray-800/80 backdrop-blur-md">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-5 py-2.5 rounded-xl text-sm font-medium tracking-wide transition-all duration-300 ${
-                activeFilter === filter
-                  ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md'
-                  : 'text-gray-400 hover:text-white hover:bg-gray-800/40'
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
+        {/* Visit Overlay on Hover */}
+        <div className="absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-gray-500 bg-black/60 opacity-0 transition-opacity duration-300 delay-300 group-hover:opacity-100 hidden lg:block pointer-events-none">
+          <a href={link} target="_blank" rel="noreferrer" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-[#0096ff] bg-black px-6 py-3 font-bold text-[#0096ff] hover:bg-[#0096ff] hover:text-black transition-colors duration-300 pointer-events-auto">
+            View Project
+          </a>
         </div>
+      </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {filteredProjects.map((project, idx) => (
-            <div 
-              key={idx} 
-              className="group rounded-2xl glassmorphism-card border border-gray-800/80 p-6 sm:p-8 flex flex-col justify-between"
-            >
-              <div className="space-y-6">
-                {/* Card Titlebar */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 bg-gray-950 border border-gray-800 rounded-2xl text-indigo-400 shadow-inner group-hover:scale-105 transition-transform duration-300">
-                      {project.icon}
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">
-                        {project.category}
-                      </span>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">
-                        {project.title}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <a 
-                      href={project.githubLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="p-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-indigo-400 hover:border-indigo-500/30 transition-all duration-200"
-                      title="View GitHub Repository"
-                    >
-                      <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                        <path d="M9 18c-4.51 2-5-2-7-2" />
-                      </svg>
-                    </a>
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="p-2 rounded-xl bg-gray-900 border border-gray-800 text-gray-400 hover:text-indigo-400 hover:border-indigo-500/30 transition-all duration-200"
-                      title="Visit Live Deployment"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
-                  </div>
-                </div>
+      {/* Mobile button */}
+      <div className="mb-8 flex items-center justify-center lg:hidden">
+        <a href={link} target="_blank" rel="noreferrer" className="rounded-full bg-[#0096ff] px-6 py-3 font-bold text-black transition-colors duration-300 hover:bg-white">
+          View Project
+        </a>
+      </div>
 
-                {/* Description */}
-                <p className="text-gray-400 text-sm sm:text-base leading-relaxed text-left">
-                  {project.description}
-                </p>
-
-                {/* Split highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-2 border-y border-gray-900/80">
-                  <div className="text-left space-y-1">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-400">
-                      {project.backendLabel || 'Backend Blueprint'}
-                    </h4>
-                    <p className="text-xs text-gray-400 leading-normal">{project.backendHighlight}</p>
-                  </div>
-                  <div className="text-left space-y-1">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-violet-400">
-                      {project.frontendLabel || 'Frontend Blueprint'}
-                    </h4>
-                    <p className="text-xs text-gray-400 leading-normal">{project.frontendHighlight}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Badges / Tags */}
-              <div className="flex flex-wrap gap-2 pt-6">
-                {project.tags.map((tag, tIdx) => (
-                  <span 
-                    key={tIdx} 
-                    className="text-[11px] font-mono font-medium text-gray-400 bg-gray-900 border border-gray-800/80 px-2.5 py-1.5 rounded-lg group-hover:border-gray-800 transition-colors"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+      {/* Text Content */}
+      <div className={`flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:px-10 ${isLeft ? 'lg:items-start' : 'lg:items-end'}`}>
+        <h2 className={`mb-4 text-center text-3xl font-bold ${isLeft ? 'lg:text-left' : 'lg:text-right'}`}>
+          {title}
+        </h2>
+        <p className={`max-w-lg text-center text-lg text-gray-300 leading-relaxed lg:max-w-none ${isLeft ? 'lg:text-left' : 'lg:text-right'}`}>
+          {description}
+        </p>
+        <div className={`mt-6 flex w-full flex-row flex-wrap justify-center gap-2 ${isLeft ? 'lg:justify-start' : 'lg:justify-end'}`}>
+          {tags.map((tag, i) => (
+            <div key={i} className="bg-[#20ffb8] rounded-full px-4 py-1 text-sm font-bold text-black transition-colors duration-300 hover:bg-white">
+              {tag}
             </div>
           ))}
         </div>
-
       </div>
-    </section>
+    </div>
+  );
+};
+
+const Projects = () => {
+  return (
+    <div id="projects" className="flex flex-col items-center justify-center pt-20">
+      <h1 className="mb-16 text-center text-5xl font-bold tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>
+        PROJECTS
+      </h1>
+      
+      <div className="w-full max-w-[1440px]">
+        <Project 
+          position="left"
+          title="DEA (Discovery & Execution Assistant)"
+          description="An intelligence engine that takes your tech stack and interests and delivers tailored AI-generated project ideas, live trending project types, and full architecture breakdowns with implementation roadmaps. Integrated NVIDIA NIM reasoning models."
+          tags={["Next.js", "React", "Tailwind CSS", "Framer Motion"]}
+          link="#"
+        />
+        
+        <Project 
+          position="right"
+          title="ShopVibe - E-commerce API"
+          description="A comprehensive Spring Boot based e-commerce backend offering full inventory management, secure user authentication with JWT, and transactional processing. Architected for scalability and robust error handling."
+          tags={["Java", "Spring Boot", "REST API", "PostgreSQL"]}
+          link="#"
+        />
+      </div>
+    </div>
   );
 };
 

@@ -1,129 +1,65 @@
 import React from 'react';
-import { User, BookOpen, GraduationCap, MapPin, Calendar } from 'lucide-react';
+import { Calendar, MapPin, GraduationCap } from 'lucide-react';
+
+const Position = ({ title, dateRange, location, summary, highlights = [] }) => (
+  <div className="flex flex-row items-start gap-4 pb-8">
+    <div className="flex flex-col items-center justify-start gap-2 self-stretch pt-2">
+      <div className="bg-[#0096ff] h-2 w-2 rounded-full"></div>
+      <div className="w-[1px] flex-grow bg-gray-700"></div>
+    </div>
+    <div className="flex-1">
+      <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
+      
+      <div className="flex flex-wrap gap-4 text-gray-400 text-sm mb-3">
+        <div className="flex items-center gap-1.5">
+          <Calendar size={14} /> {dateRange}
+        </div>
+        <div className="flex items-center gap-1.5">
+          <MapPin size={14} /> {location}
+        </div>
+      </div>
+      
+      {summary && <p className="text-gray-300 mb-3 leading-relaxed">{summary}</p>}
+      
+      {highlights.length > 0 && (
+        <ul className="list-inside list-disc text-gray-400 space-y-1 ml-1">
+          {highlights.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+);
 
 const About = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-gray-950/40">
-      {/* Background shape */}
-      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] rounded-full bg-violet-600/5 blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Heading */}
-        <div className="text-center md:text-left mb-16">
-          <div className="inline-flex items-center gap-2 text-indigo-400 font-semibold text-sm tracking-widest uppercase mb-3">
-            <User size={16} />
-            About Me
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            My Journey & Background
-          </h2>
-          <div className="h-1 w-20 bg-indigo-500 rounded mt-4 mx-auto md:mx-0" />
-        </div>
-
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Profile Image (Left Column - 5 cols) */}
-          <div className="lg:col-span-5 w-full flex justify-center">
-            <div className="relative group">
-              {/* Subtle background glow element */}
-              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-500 opacity-20 blur-lg group-hover:opacity-45 transition-opacity duration-500 pointer-events-none" />
-              
-              {/* Purple gradient border wrapper */}
-              <div className="p-1 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 shadow-[0_0_30px_rgba(168,85,247,0.2)]">
-                <img 
-                  src="/srishti.jpg" 
-                  alt="Srishti Rawat" 
-                  width="400"
-                  height="400"
-                  className="rounded-full object-cover w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] max-w-full"
-                />
-              </div>
-            </div>
-          </div>
-
-
-          {/* Biography Text (Right Column - 7 cols) */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <h3 className="text-2xl font-bold text-white">
-              Aspiring Software Engineer
-            </h3>
+    <section id="about" className="flex flex-col items-center justify-center pt-10 pb-10">
+      <h2 className="mb-8 text-center text-4xl font-bold tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>
+        BACKGROUND
+      </h2>
+      
+      <div className="w-[90%] md:w-[600px] lg:w-2/3">
+        <div className="rounded-xl p-0.5 bg-gradient-to-br from-[#101010] to-[#202020] shadow-[0_10px_25px_10px_rgba(4,57,57,0.2)]">
+          <div className="bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] rounded-xl px-6 py-8">
+            <Position 
+              title="Full Stack Engineering"
+              dateRange="Present"
+              location="ABES Engineering College"
+              summary="My engineering stack focuses heavily on enterprise-grade backends using Java & Spring Boot and dynamic user interfaces using React & Tailwind CSS. I love bridging the gap between back-end robustness and clean, highly engaging front-end visual experiences."
+              highlights={[
+                "Maintained a Cumulative CGPA of 8.05 through 5 semesters.",
+                "Completed 100+ LeetCode problems practicing Data Structures and Algorithms in Java."
+              ]}
+            />
             
-            <p className="text-gray-400 leading-relaxed">
-              I am currently in my final year of Computer Science and Engineering at <strong>ABES Engineering College</strong>. My educational journey has provided me with a strong foundation in core computer science principles, including Data Structures, Algorithms, Object-Oriented Programming, and Database Management Systems.
-            </p>
-
-            <p className="text-gray-400 leading-relaxed">
-              My engineering stack focuses heavily on enterprise-grade backends using <strong>Java & Spring Boot</strong> and dynamic user interfaces using <strong>React & Tailwind CSS</strong>. I love bridging the gap between back-end robustness and clean, highly engaging front-end visual experiences.
-            </p>
-
-            {/* Quick Details Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="flex items-start gap-3">
-                <div className="p-2.5 rounded-xl bg-gray-900 border border-gray-800 text-indigo-400">
-                  <GraduationCap size={18} />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium text-sm">B.Tech - CSE</h4>
-                  <p className="text-gray-400 text-xs mt-0.5">ABES Engineering College</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="p-2.5 rounded-xl bg-gray-900 border border-gray-800 text-violet-400">
-                  <Calendar size={18} />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium text-sm">Graduation Year</h4>
-                  <p className="text-gray-400 text-xs mt-0.5">2027 Batch</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="p-2.5 rounded-xl bg-gray-900 border border-gray-800 text-emerald-400">
-                  <MapPin size={18} />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium text-sm">Location</h4>
-                  <p className="text-gray-400 text-xs mt-0.5">Ghaziabad, UP, India</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="p-2.5 rounded-xl bg-gray-900 border border-gray-800 text-amber-400">
-                  <BookOpen size={18} />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium text-sm">Key Focus</h4>
-                  <p className="text-gray-400 text-xs mt-0.5">Full Stack Development</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Achievements Card */}
-            <div className="p-5 rounded-2xl glassmorphism-card border-indigo-500/10 flex flex-col sm:flex-row gap-4 items-center justify-between mt-6">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-bold text-sm">
-                  8.05
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold text-sm">Cumulative CGPA</h4>
-                  <p className="text-gray-400 text-xs mt-0.5">Through 5 semesters of study</p>
-                </div>
-              </div>
-              <div className="h-px w-full sm:h-8 sm:w-px bg-gray-800" />
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 font-bold text-sm">
-                  100+
-                </div>
-                <div>
-                  <h4 className="text-white font-semibold text-sm">LeetCode Questions</h4>
-                  <p className="text-gray-400 text-xs mt-0.5">Java DSA practice</p>
-                </div>
-              </div>
-            </div>
+            <Position 
+              title="B.Tech - Computer Science and Engineering"
+              dateRange="2023 - 2027"
+              location="Ghaziabad, UP, India"
+              summary="Currently in my final year. Built a strong foundation in core computer science principles, including Data Structures, Algorithms, Object-Oriented Programming, and Database Management Systems."
+            />
           </div>
-          
         </div>
       </div>
     </section>
