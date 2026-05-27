@@ -43,21 +43,14 @@ const About = () => {
         <div className="rounded-xl p-0.5 bg-gradient-to-br from-[#101010] to-[#202020] shadow-[0_10px_25px_10px_rgba(4,57,57,0.2)]">
           <div className="bg-gradient-to-bl from-[#101010] via-[#272727] to-[#181818] rounded-xl px-6 py-8">
             <Position 
-              title="Full Stack Engineering"
-              dateRange="Present"
-              location="ABES Engineering College"
-              summary="My engineering stack focuses heavily on enterprise-grade backends using Java & Spring Boot and dynamic user interfaces using React & Tailwind CSS. I love bridging the gap between back-end robustness and clean, highly engaging front-end visual experiences."
-              highlights={[
-                "Maintained a Cumulative CGPA of 8.05 through 5 semesters.",
-                "Completed 100+ LeetCode problems practicing Data Structures and Algorithms in Java."
-              ]}
-            />
-            
-            <Position 
               title="B.Tech - Computer Science and Engineering"
               dateRange="2023 - 2027"
-              location="Ghaziabad, UP, India"
+              location="ABES Engineering College, Ghaziabad, UP, India"
               summary="Currently in my final year. Built a strong foundation in core computer science principles, including Data Structures, Algorithms, Object-Oriented Programming, and Database Management Systems."
+              highlights={[
+                "Maintained a Cumulative CGPA of 8.05 through 5 semesters.",
+                "Completed 100+ LeetCode problems and 500+ CodeChef problems  practicing Data Structures and Algorithms in Java."
+              ]}
             />
           </div>
         </div>

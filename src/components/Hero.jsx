@@ -24,7 +24,7 @@ const Hero = () => {
             <div className="flex h-20 flex-row items-center">
               <div className="mr-4 flex w-20 h-20 items-center justify-center rounded-full bg-[#505050] overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200" 
+                  src="/srishti.jpg" 
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />
@@ -46,13 +46,16 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-row items-center justify-start gap-4">
-              <a href="https://github.com/SrishtiRawat" target="_blank" rel="noreferrer" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-white">
+              <a href="/resumee.pdf" target="_blank" rel="noreferrer" className="px-6 py-2.5 font-bold bg-[#0096ff] text-black hover:bg-white rounded-full transition-colors">
+                Resume
+              </a>
+              <a href="https://github.com/SrishtiDev" target="_blank" rel="noreferrer" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-white">
                 <GithubIcon size={20} />
               </a>
-              <a href="https://linkedin.com/in/srishtirawat" target="_blank" rel="noreferrer" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#0077b5]">
+              <a href="https://www.linkedin.com/in/srishtirwt/" target="_blank" rel="noreferrer" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#0077b5]">
                 <LinkedinIcon size={20} />
               </a>
-              <a href="mailto:contact@srishti.dev" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#ea4335]">
+              <a href="mailto:rawat.srishti1010@gmail.com" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#ea4335]">
                 <Mail size={20} />
               </a>
             </div>

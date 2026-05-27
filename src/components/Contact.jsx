@@ -37,7 +37,7 @@ const Contact = () => {
             <div className="mb-2 px-5">
               <div className="flex h-[150px] w-[150px] items-center justify-center overflow-hidden rounded-full border-2 border-solid border-[#0096ff] bg-[#505050]">
                 <img 
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200" 
+                  src="/srishti.jpg" 
                   alt="Profile" 
                   className="h-full w-full object-cover"
                 />
@@ -57,8 +57,8 @@ const Contact = () => {
                   Email me at:
                 </div>
                 <div className="text-white">
-                  <a href="mailto:contact@srishti.dev" className="text-[#0096ff] hover:underline hover:text-white transition-colors duration-200">
-                    contact@srishti.dev
+                  <a href="mailto:rawat.srishti1010@gmail.com" className="text-[#0096ff] hover:underline hover:text-white transition-colors duration-200">
+                    rawat.srishti1010@gmail.com
                   </a>
                 </div>
               </div>
@@ -67,13 +67,13 @@ const Contact = () => {
               <div className="h-[1px] w-full bg-[#0096ff] md:h-auto md:w-[1px]"></div>
 
               <div className="flex flex-row items-center justify-center gap-4">
-                <a href="https://github.com/SrishtiRawat" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-[#0096ff] transition-colors">
+                <a href="https://github.com/SrishtiDev" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-[#0096ff] transition-colors">
                   <GithubIcon size={24} />
                 </a>
-                <a href="https://linkedin.com/in/srishtirawat" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-[#0096ff] transition-colors">
+                <a href="https://www.linkedin.com/in/srishtirwt/" target="_blank" rel="noreferrer" className="text-gray-300 hover:text-[#0096ff] transition-colors">
                   <LinkedinIcon size={24} />
                 </a>
-                <a href="mailto:contact@srishti.dev" className="text-gray-300 hover:text-[#0096ff] transition-colors">
+                <a href="mailto:rawat.srishti1010@gmail.com" className="text-gray-300 hover:text-[#0096ff] transition-colors">
                   <Mail size={24} />
                 </a>
               </div>

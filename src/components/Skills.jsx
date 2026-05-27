@@ -74,13 +74,13 @@ const Skills = () => {
                 Beyond my core stack, I have strong competencies in database management, object-oriented design, and algorithms, allowing me to build scalable and optimized software solutions from the ground up.
               </p>
               <p className="mb-4 leading-relaxed">
-                Full resume available upon request via <a href="mailto:contact@srishti.dev" className="text-[#0096ff] hover:underline">Email</a>.
+                Full resume available upon request via <a href="mailto:rawat.srishti1010@gmail.com" className="text-[#0096ff] hover:underline">Email</a>.
               </p>
             </div>
             
             <div className="text-center lg:text-left mt-auto">
               <a 
-                href="#" 
+                href="/resumee.pdf" 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-block bg-[#0096ff] text-black hover:bg-white rounded-full px-6 py-2.5 font-bold transition-colors duration-300"
