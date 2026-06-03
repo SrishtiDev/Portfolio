@@ -72,10 +72,11 @@ const Projects = () => {
         
         <Project 
           position="right"
-          title="ShopVibe - E-commerce API"
-          description="A comprehensive Spring Boot based e-commerce backend offering full inventory management, secure user authentication with JWT, and transactional processing. Architected for scalability and robust error handling."
-          tags={["Java", "Spring Boot", "REST API", "PostgreSQL"]}
-          link="#"
+          title="HIRE ORBIT"
+          description="A multi-model AI pipeline that simulates enterprise ATS systems to parse, score, and optimize resumes. Leverages LLMs for deterministic keyword gap detection and dynamically compiles ATS-optimized PDFs using a containerized LaTeX engine."
+          tags={["Next.js 14", "Node.js", "Express.js", "Docker", "LLMs"]}
+          link="https://hire-orbit-weld.vercel.app"
+          image="/hireorbit.png"
         />
       </div>
     </div>
