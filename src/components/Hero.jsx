@@ -56,14 +56,6 @@ const Hero = () => {
 
             <div className="mt-8 flex flex-row items-center justify-start gap-4">
               <a
-                href="/resumee.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="px-6 py-2.5 font-bold bg-[#0096ff] text-black hover:bg-white rounded-full transition-colors"
-              >
-                Resume
-              </a>
-              <a
                 href="https://github.com/SrishtiDev"
                 target="_blank"
                 rel="noreferrer"

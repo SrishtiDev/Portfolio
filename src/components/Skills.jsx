@@ -80,7 +80,7 @@ const Skills = () => {
             
             <div className="text-center lg:text-left mt-auto">
               <a 
-                href="/resumee.pdf" 
+                href="/S_Resume.pdf" 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-block bg-[#0096ff] text-black hover:bg-white rounded-full px-6 py-2.5 font-bold transition-colors duration-300"
