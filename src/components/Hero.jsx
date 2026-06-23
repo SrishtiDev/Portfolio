@@ -17,15 +17,18 @@ const LinkedinIcon = ({ size = 20 }) => (
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-16">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center pt-32 pb-16"
+    >
       <div className="w-[90%] md:w-[600px] lg:w-1/2 z-10">
         <div className="rounded-2xl p-0.5 bg-gradient-to-br from-[#101010] to-[#202020] shadow-[0_10px_25px_10px_rgba(4,57,57,0.2)] hover:scale-[1.02] transition-transform duration-300">
           <div className="flex flex-col text-white p-5 lg:p-10 bg-[#101010]/50 rounded-xl backdrop-blur-sm">
             <div className="flex h-20 flex-row items-center">
               <div className="mr-4 flex w-20 h-20 items-center justify-center rounded-full bg-[#505050] overflow-hidden">
-                <img 
-                  src="/srishti.jpg" 
-                  alt="Profile" 
+                <img
+                  src="/srishti.jpg"
+                  alt="Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -33,29 +36,53 @@ const Hero = () => {
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-[#72ffff] via-[#20ffb8] to-[#0096ff] bg-[length:200%] bg-clip-text text-transparent">
                   Srishti Rawat
                 </h1>
-                <div className="w-full text-xl text-gray-300 font-sans">Full Stack Developer</div>
+                <div className="w-full text-xl text-gray-300 font-sans">
+                  Full Stack Developer
+                </div>
               </div>
             </div>
-            
-            <div className="mt-8 mb-4 text-2xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
-              Hello World!
+
+            <div
+              className="mt-8 mb-4 text-2xl font-bold"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Hey There!
             </div>
-            
+
             <p className="text-left text-gray-300 leading-relaxed font-sans">
-              I build comprehensive full-stack applications. Driven by clean code, robust database designs, and interactive user experiences. Crafting scalable Java Spring Boot backends and highly responsive React frontends.
+              I'm a Full-stack engineer who builds things that work and lately, 
+              things that think. Clean backends,responsive frontends, and AI-powered systems using LangChain,LangGraph, and RAG. From database design to agentic workflows, I like the full picture.
             </p>
 
             <div className="mt-8 flex flex-row items-center justify-start gap-4">
-              <a href="/resumee.pdf" target="_blank" rel="noreferrer" className="px-6 py-2.5 font-bold bg-[#0096ff] text-black hover:bg-white rounded-full transition-colors">
+              <a
+                href="/resumee.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-2.5 font-bold bg-[#0096ff] text-black hover:bg-white rounded-full transition-colors"
+              >
                 Resume
               </a>
-              <a href="https://github.com/SrishtiDev" target="_blank" rel="noreferrer" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-white">
+              <a
+                href="https://github.com/SrishtiDev"
+                target="_blank"
+                rel="noreferrer"
+                className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-white"
+              >
                 <GithubIcon size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/srishtirwt/" target="_blank" rel="noreferrer" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#0077b5]">
+              <a
+                href="https://www.linkedin.com/in/srishtirwt/"
+                target="_blank"
+                rel="noreferrer"
+                className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#0077b5]"
+              >
                 <LinkedinIcon size={20} />
               </a>
-              <a href="mailto:rawat.srishti1010@gmail.com" className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#ea4335]">
+              <a
+                href="mailto:rawat.srishti1010@gmail.com"
+                className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#ea4335]"
+              >
                 <Mail size={20} />
               </a>
             </div>
