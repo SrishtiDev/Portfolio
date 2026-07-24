@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Project = ({ position = 'left', title, description, tags, link, image }) => {
+const GithubIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+  </svg>
+);
+
+const Project = ({ position = 'left', title, description, tags, link, githubLink, image }) => {
   const isLeft = position === 'left';
   
   return (
@@ -8,7 +14,6 @@ const Project = ({ position = 'left', title, description, tags, link, image }) =
       
       {/* 3D Image Container */}
       <div className="group relative mb-5 flex aspect-video w-full lg:w-1/2 [perspective:800px] lg:mb-0 lg:ml-auto">
-        {/* We use a colored gradient placeholder instead of an image to match the dark theme */}
         <div className={`absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-gray-700 bg-gradient-to-br from-[#202020] to-[#101010] opacity-50 transition-transform duration-500 ease-in-out group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] group-hover:rotate-x-0 group-hover:rotate-y-0 group-hover:translate-z-0 ${isLeft ? 'translate-x-[calc(-50%+15px)] rotate-y-6' : 'translate-x-[calc(-50%-15px)] -rotate-y-6'}`} />
         <div className={`absolute top-1/2 left-1/2 aspect-video w-[90%] overflow-hidden -translate-x-1/2 -translate-y-1/2 rounded-xl border border-gray-600 bg-gradient-to-br from-[#303030] to-[#181818] opacity-100 flex items-center justify-center transition-transform duration-500 ease-in-out group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] group-hover:rotate-x-0 group-hover:rotate-y-0 group-hover:translate-z-0 ${isLeft ? 'translate-x-[calc(-50%+25px)] translate-y-[calc(-50%+10px)] rotate-y-6 translate-z-[-20px]' : 'translate-x-[calc(-50%-25px)] translate-y-[calc(-50%+10px)] -rotate-y-6 translate-z-[-20px]'}`}>
           {image ? (
@@ -19,18 +24,28 @@ const Project = ({ position = 'left', title, description, tags, link, image }) =
         </div>
 
         {/* Visit Overlay on Hover */}
-        <div className="absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-gray-500 bg-black/60 opacity-0 transition-opacity duration-300 delay-300 group-hover:opacity-100 hidden lg:block pointer-events-none">
-          <a href={link} target="_blank" rel="noreferrer" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-[#0096ff] bg-black px-6 py-3 font-bold text-[#0096ff] hover:bg-[#0096ff] hover:text-black transition-colors duration-300 pointer-events-auto">
+        <div className="absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-gray-500 bg-black/60 opacity-0 transition-opacity duration-300 delay-300 group-hover:opacity-100 hidden lg:flex lg:items-center lg:justify-center gap-3 pointer-events-none">
+          <a href={link} target="_blank" rel="noreferrer" className="rounded-xl border-2 border-[#0096ff] bg-black px-5 py-2.5 font-bold text-[#0096ff] hover:bg-[#0096ff] hover:text-black transition-colors duration-300 pointer-events-auto">
             View Project
           </a>
+          {githubLink && (
+            <a href={githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-xl border-2 border-gray-400 bg-black px-5 py-2.5 font-bold text-gray-300 hover:border-white hover:text-white transition-colors duration-300 pointer-events-auto">
+              <GithubIcon /> GitHub
+            </a>
+          )}
         </div>
       </div>
 
-      {/* Mobile button */}
-      <div className="mb-8 flex items-center justify-center lg:hidden">
+      {/* Mobile buttons */}
+      <div className="mb-8 flex items-center justify-center gap-3 lg:hidden">
         <a href={link} target="_blank" rel="noreferrer" className="rounded-full bg-[#0096ff] px-6 py-3 font-bold text-black transition-colors duration-300 hover:bg-white">
           View Project
         </a>
+        {githubLink && (
+          <a href={githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border-2 border-gray-500 px-5 py-2.5 font-bold text-gray-300 hover:border-white hover:text-white transition-colors duration-300">
+            <GithubIcon /> GitHub
+          </a>
+        )}
       </div>
 
       {/* Text Content */}
@@ -77,6 +92,16 @@ const Projects = () => {
           tags={["Next.js 14", "Node.js", "Express.js", "Docker", "LLMs"]}
           link="https://hire-orbit-weld.vercel.app"
           image="/hireorbit.png"
+        />
+
+        <Project 
+          position="left"
+          title="REPOMIND"
+          description="Ask questions about any GitHub repository. Get answers with source citations. Paste a GitHub URL and ask 'How does auth work?' or 'Where is rate limiting implemented?' — RepoMind's agent retrieves relevant code chunks, checks if it has enough context, retrieves again if not, and answers with the file and chunk it used."
+          tags={["RAG", "LLM Agents", "GitHub API", "Vector Search", "MCP"]}
+          link="https://repo-mind-brown.vercel.app"
+          githubLink="https://github.com/SrishtiDev/RepoMind"
+          image="/repomind.png"
         />
       </div>
     </div>
