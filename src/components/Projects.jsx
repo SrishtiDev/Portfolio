@@ -6,28 +6,30 @@ const GithubIcon = () => (
   </svg>
 );
 
-const Project = ({ position = 'left', title, description, tags, link, githubLink, image }) => {
+const Project = ({ position = 'left', title, description, highlights = [], tags, link, githubLink, image }) => {
   const isLeft = position === 'left';
   
   return (
-    <div className={`mb-10 flex h-fit w-full flex-col justify-center px-6 lg:px-20 ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+    <div className={`mb-16 flex h-fit w-full flex-col justify-center px-6 lg:px-20 ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
       
       {/* 3D Image Container */}
-      <div className="group relative mb-5 flex aspect-video w-full lg:w-1/2 [perspective:800px] lg:mb-0 lg:ml-auto">
+      <div className="group relative mb-6 flex aspect-video w-full lg:w-1/2 [perspective:800px] lg:mb-0 lg:ml-auto">
         <div className={`absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-gray-700 bg-gradient-to-br from-[#202020] to-[#101010] opacity-50 transition-transform duration-500 ease-in-out group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] group-hover:rotate-x-0 group-hover:rotate-y-0 group-hover:translate-z-0 ${isLeft ? 'translate-x-[calc(-50%+15px)] rotate-y-6' : 'translate-x-[calc(-50%-15px)] -rotate-y-6'}`} />
         <div className={`absolute top-1/2 left-1/2 aspect-video w-[90%] overflow-hidden -translate-x-1/2 -translate-y-1/2 rounded-xl border border-gray-600 bg-gradient-to-br from-[#303030] to-[#181818] opacity-100 flex items-center justify-center transition-transform duration-500 ease-in-out group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] group-hover:rotate-x-0 group-hover:rotate-y-0 group-hover:translate-z-0 ${isLeft ? 'translate-x-[calc(-50%+25px)] translate-y-[calc(-50%+10px)] rotate-y-6 translate-z-[-20px]' : 'translate-x-[calc(-50%-25px)] translate-y-[calc(-50%+10px)] -rotate-y-6 translate-z-[-20px]'}`}>
           {image ? (
             <img src={image} alt={title} className="w-full h-full object-cover opacity-80" />
           ) : (
-            <h3 className="text-2xl font-black text-gray-500 uppercase tracking-widest">{title}</h3>
+            <h3 className="text-2xl font-black text-cyan-400 uppercase tracking-widest p-4 text-center">{title}</h3>
           )}
         </div>
 
         {/* Visit Overlay on Hover */}
-        <div className="absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-gray-500 bg-black/60 opacity-0 transition-opacity duration-300 delay-300 group-hover:opacity-100 hidden lg:flex lg:items-center lg:justify-center gap-3 pointer-events-none">
-          <a href={link} target="_blank" rel="noreferrer" className="rounded-xl border-2 border-[#0096ff] bg-black px-5 py-2.5 font-bold text-[#0096ff] hover:bg-[#0096ff] hover:text-black transition-colors duration-300 pointer-events-auto">
-            View Project
-          </a>
+        <div className="absolute top-1/2 left-1/2 aspect-video w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-gray-500 bg-black/70 opacity-0 transition-opacity duration-300 delay-300 group-hover:opacity-100 hidden lg:flex lg:items-center lg:justify-center gap-3 pointer-events-none">
+          {link && (
+            <a href={link} target="_blank" rel="noreferrer" className="rounded-xl border-2 border-[#0096ff] bg-black px-5 py-2.5 font-bold text-[#0096ff] hover:bg-[#0096ff] hover:text-black transition-colors duration-300 pointer-events-auto">
+              View Project
+            </a>
+          )}
           {githubLink && (
             <a href={githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-xl border-2 border-gray-400 bg-black px-5 py-2.5 font-bold text-gray-300 hover:border-white hover:text-white transition-colors duration-300 pointer-events-auto">
               <GithubIcon /> GitHub
@@ -37,28 +39,45 @@ const Project = ({ position = 'left', title, description, tags, link, githubLink
       </div>
 
       {/* Mobile buttons */}
-      <div className="mb-8 flex items-center justify-center gap-3 lg:hidden">
-        <a href={link} target="_blank" rel="noreferrer" className="rounded-full bg-[#0096ff] px-6 py-3 font-bold text-black transition-colors duration-300 hover:bg-white">
-          View Project
-        </a>
+      <div className="mb-6 flex items-center justify-center gap-3 lg:hidden">
+        {link && (
+          <a href={link} target="_blank" rel="noreferrer" className="rounded-full bg-[#0096ff] px-6 py-2.5 font-bold text-black transition-colors duration-300 hover:bg-white text-sm">
+            View Project
+          </a>
+        )}
         {githubLink && (
-          <a href={githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border-2 border-gray-500 px-5 py-2.5 font-bold text-gray-300 hover:border-white hover:text-white transition-colors duration-300">
+          <a href={githubLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border-2 border-gray-500 px-5 py-2 font-bold text-gray-300 hover:border-white hover:text-white transition-colors duration-300 text-sm">
             <GithubIcon /> GitHub
           </a>
         )}
       </div>
 
       {/* Text Content */}
-      <div className={`flex h-fit w-full flex-col items-center justify-center lg:h-[340px] lg:w-1/2 lg:px-10 ${isLeft ? 'lg:items-start' : 'lg:items-end'}`}>
-        <h2 className={`mb-4 text-center text-3xl font-bold ${isLeft ? 'lg:text-left' : 'lg:text-right'}`}>
+      <div className={`flex h-fit w-full flex-col justify-center lg:w-1/2 lg:px-10 ${isLeft ? 'lg:items-start' : 'lg:items-end'}`}>
+        <h2 className={`mb-3 text-2xl lg:text-3xl font-bold text-white ${isLeft ? 'lg:text-left' : 'lg:text-right'}`}>
           {title}
         </h2>
-        <p className={`max-w-lg text-center text-lg text-gray-300 leading-relaxed lg:max-w-none ${isLeft ? 'lg:text-left' : 'lg:text-right'}`}>
-          {description}
-        </p>
-        <div className={`mt-6 flex w-full flex-row flex-wrap justify-center gap-2 ${isLeft ? 'lg:justify-start' : 'lg:justify-end'}`}>
+        
+        {description && (
+          <p className={`mb-3 max-w-lg text-gray-300 text-base leading-relaxed ${isLeft ? 'lg:text-left' : 'lg:text-right'}`}>
+            {description}
+          </p>
+        )}
+
+        {highlights.length > 0 && (
+          <ul className={`mb-4 space-y-2 text-sm text-gray-300 text-left w-full ${isLeft ? 'lg:text-left' : 'lg:text-right'}`}>
+            {highlights.map((point, pIdx) => (
+              <li key={pIdx} className="flex items-start gap-2">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <div className={`mt-2 flex w-full flex-row flex-wrap gap-2 ${isLeft ? 'lg:justify-start' : 'lg:justify-end'}`}>
           {tags.map((tag, i) => (
-            <div key={i} className="bg-[#20ffb8] rounded-full px-4 py-1 text-sm font-bold text-black transition-colors duration-300 hover:bg-white">
+            <div key={i} className="bg-[#1e293b] text-cyan-300 border border-cyan-800/40 rounded-full px-3.5 py-1 text-xs font-semibold">
               {tag}
             </div>
           ))}
@@ -78,30 +97,52 @@ const Projects = () => {
       <div className="w-full max-w-[1440px]">
         <Project 
           position="left"
-          title="DEA (Discovery & Execution Assistant)"
-          description="An intelligence engine that takes your tech stack and interests and delivers tailored AI-generated project ideas, live trending project types, and full architecture breakdowns with implementation roadmaps. Integrated NVIDIA NIM reasoning models."
-          tags={["Next.js", "React", "Tailwind CSS", "Framer Motion"]}
-          link="https://idea-gamma-azure.vercel.app"
-          image="/p2.png"
+          title="RepoMind"
+          description="High-performance GitHub code intelligence and RAG agent."
+          highlights={[
+            "Built a multi-path RAG agent — parallel vector + AST-graph retrieval with self-correcting query refinement — cut hallucinations 40%, lifted context relevance 35%.",
+            "Architected an asynchronous BullMQ ingestion pipeline with Piscina-isolated AST parsing, handling concurrent ingestion requests — 10x Express throughput, 99.9% data consistency across batch processing.",
+            "Enforced 100% multi-tenant isolation via Qdrant metadata filtering; shipped a standalone MCP server for Claude Code/Cursor — 25% faster search on 1,000+ file repos."
+          ]}
+          tags={["TypeScript", "LangGraph", "LangChain", "Qdrant", "BullMQ", "Redis", "Docker"]}
+          link="https://repo-mind-brown.vercel.app"
+          githubLink="https://github.com/SrishtiDev/RepoMind"
+          image="/repomind.png"
+        />
+
+        <Project 
+          position="right"
+          title="Selvedge CRM"
+          description="AI-native autonomous marketing campaign agent and event-driven pipeline."
+          highlights={[
+            "Architected an AI-native CRM agent on LangGraph (ReAct) + Google Gemini with 5 tool-calling functions — turns natural-language marketing intent into fully executed campaigns, zero manual query building.",
+            "Built an async, event-driven messaging pipeline across a 3-service NestJS monorepo — BullMQ + Upstash Redis, concurrency-5 job processing with webhook-based tracking across 5 live delivery states.",
+            "Engineered a segmentation engine on PostgreSQL (Supabase/TypeORM) — 8 dynamic filter dimensions and LLM-context-safe result limiting, preventing token overflow across 500 seeded customers."
+          ]}
+          tags={["TypeScript", "LangGraph", "Google Gemini", "NestJS", "BullMQ", "PostgreSQL", "Supabase"]}
         />
         
         <Project 
-          position="right"
-          title="HIRE ORBIT"
-          description="A multi-model AI pipeline that simulates enterprise ATS systems to parse, score, and optimize resumes. Leverages LLMs for deterministic keyword gap detection and dynamically compiles ATS-optimized PDFs using a containerized LaTeX engine."
-          tags={["Next.js 14", "Node.js", "Express.js", "Docker", "LLMs"]}
+          position="left"
+          title="HireOrbit"
+          description="Multi-model AI pipeline simulating enterprise ATS systems."
+          highlights={[
+            "Cut ATS scoring latency from ~30s to under 1.5s by migrating inference to Groq's LPU-based API, layered with Redis caching on JD keyword sets — validated across 30+ users spanning SDE, Data Science, and PM roles.",
+            "Designed a RESTful 3-stage inference API — JD keyword extraction → resume-JD scoring → LaTeX generation — with middleware-style JSON schema validation enforcing deterministic outputs across concurrent stateless requests.",
+            "Containerized Tectonic LaTeX compiler in Docker; orchestrated non-blocking child_process.spawn calls from Node.js so the event loop never blocked under concurrent PDF compilation load."
+          ]}
+          tags={["TypeScript", "Next.js 14", "Node.js", "Express.js", "Docker", "Redis", "Groq API"]}
           link="https://hire-orbit-weld.vercel.app"
           image="/hireorbit.png"
         />
 
         <Project 
-          position="left"
-          title="REPOMIND"
-          description="Ask questions about any GitHub repository. Get answers with source citations. Paste a GitHub URL and ask 'How does auth work?' or 'Where is rate limiting implemented?' — RepoMind's agent retrieves relevant code chunks, checks if it has enough context, retrieves again if not, and answers with the file and chunk it used."
-          tags={["RAG", "LLM Agents", "GitHub API", "Vector Search", "MCP"]}
-          link="https://repo-mind-brown.vercel.app"
-          githubLink="https://github.com/SrishtiDev/RepoMind"
-          image="/repomind.png"
+          position="right"
+          title="DEA (Discovery & Execution Assistant)"
+          description="Intelligence engine delivering AI-generated project ideas, live trending project types, and full architecture breakdowns with implementation roadmaps using NVIDIA NIM reasoning models."
+          tags={["Next.js", "React", "Tailwind CSS", "Framer Motion", "NVIDIA NIM"]}
+          link="https://idea-gamma-azure.vercel.app"
+          image="/p2.png"
         />
       </div>
     </div>
