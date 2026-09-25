@@ -1,12 +1,18 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { GitHubCalendar } from 'react-github-calendar';
 import { GitCommit } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 export default function GitHubCalendarSection() {
+  const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const currentTheme = theme === 'system' ? resolvedTheme : theme;
 
   const customTheme = {
@@ -34,22 +40,28 @@ export default function GitHubCalendarSection() {
         </a>
       </div>
 
-      <div className="rounded-xl border border-zinc-200 dark:border-zinc-800/90 bg-zinc-50/60 dark:bg-zinc-950/60 p-4 sm:p-6">
-        {/* Scrollable Container on Mobile */}
-        <div className="overflow-x-auto pb-2 scrollbar-thin">
-          <div className="min-w-[720px] flex justify-center text-zinc-700 dark:text-zinc-300">
-            <GitHubCalendar
-              username="SrishtiDev"
-              theme={customTheme}
-              colorScheme={currentTheme === 'light' ? 'light' : 'dark'}
-              blockSize={12}
-              blockRadius={3}
-              blockMargin={3}
-              fontSize={12}
-            />
+      <div className="rounded-xl border border-zinc-200 dark:border-zinc-800/90 bg-zinc-50/60 dark:bg-zinc-950/60 p-4 sm:p-6 min-h-[160px] flex items-center justify-center">
+        {mounted ? (
+          <div className="overflow-x-auto w-full pb-2 scrollbar-thin">
+            <div className="min-w-[720px] flex justify-center text-zinc-700 dark:text-zinc-300">
+              <GitHubCalendar
+                username="SrishtiDev"
+                theme={customTheme}
+                colorScheme={currentTheme === 'light' ? 'light' : 'dark'}
+                blockSize={12}
+                blockRadius={3}
+                blockMargin={3}
+                fontSize={12}
+              />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="w-full h-32 bg-zinc-200/50 dark:bg-zinc-800/50 animate-pulse rounded-lg flex items-center justify-center text-xs text-zinc-400 dark:text-zinc-600">
+            Loading GitHub Activity...
+          </div>
+        )}
       </div>
     </section>
   );
 }
+
