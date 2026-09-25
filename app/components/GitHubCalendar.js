@@ -1,9 +1,14 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { GitHubCalendar } from 'react-github-calendar';
+import dynamic from 'next/dynamic';
 import { GitCommit } from 'lucide-react';
 import { useTheme } from 'next-themes';
+
+const GitHubCalendar = dynamic(
+  () => import('react-github-calendar').then((mod) => mod.GitHubCalendar),
+  { ssr: false }
+);
 
 export default function GitHubCalendarSection() {
   const [mounted, setMounted] = useState(false);

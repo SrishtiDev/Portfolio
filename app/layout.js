@@ -4,12 +4,12 @@ import { ThemeProvider } from './components/ThemeProvider';
 export const metadata = {
   title: 'Srishti Rawat — AI / Backend Engineer',
   description:
-    'AI/backend engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents, BullMQ worker architecture, and agentic workflows.',
+    'Full-stack engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents, BullMQ worker architecture, and agentic workflows.',
   metadataBase: new URL('https://portfolio-srishti-rwt.vercel.app'),
   openGraph: {
     title: 'Srishti Rawat — AI / Backend Engineer',
     description:
-      'AI/backend engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents, BullMQ worker architecture, and agentic workflows.',
+      'Full-stack engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents, BullMQ worker architecture, and agentic workflows.',
     url: 'https://portfolio-srishti-rwt.vercel.app',
     siteName: 'Srishti Rawat Portfolio',
     images: [
@@ -27,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Srishti Rawat — AI / Backend Engineer',
     description:
-      'AI/backend engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents.',
+      'Full-stack engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents.',
     images: ['/srishti.jpg'],
   },
   robots: {
