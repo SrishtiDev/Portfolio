@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, FileText } from 'lucide-react';
 
 const GithubIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -36,8 +36,8 @@ const Hero = () => {
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-[#72ffff] via-[#20ffb8] to-[#0096ff] bg-[length:200%] bg-clip-text text-transparent">
                   Srishti Rawat
                 </h1>
-                <div className="w-full text-xl text-gray-300 font-sans">
-                  Full Stack Developer
+                <div className="w-full text-xl text-cyan-400 font-sans font-medium">
+                  AI / Backend Engineer
                 </div>
               </div>
             </div>
@@ -50,16 +50,16 @@ const Hero = () => {
             </div>
 
             <p className="text-left text-gray-300 leading-relaxed font-sans">
-              I'm a Full-stack engineer who builds things that work and lately, 
-              things that think. Clean backends,responsive frontends, and AI-powered systems using LangChain,LangGraph, and RAG. From database design to agentic workflows, I like the full picture.
+              AI/backend engineer shipping production LLM systems end-to-end. Architecting fault-tolerant RAG pipelines, async job queues, and high-performance backend systems with NestJS, Docker, LangChain, LangGraph, and full-stack LLM orchestration.
             </p>
 
-            <div className="mt-8 flex flex-row items-center justify-start gap-4">
+            <div className="mt-8 flex flex-wrap items-center justify-start gap-4">
               <a
                 href="https://github.com/SrishtiDev"
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-white"
+                title="GitHub"
               >
                 <GithubIcon size={20} />
               </a>
@@ -68,14 +68,24 @@ const Hero = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#0077b5]"
+                title="LinkedIn"
               >
                 <LinkedinIcon size={20} />
               </a>
               <a
                 href="mailto:rawat.srishti1010@gmail.com"
                 className="p-3 bg-[#202020] hover:bg-[#303030] rounded-full transition-colors text-[#ea4335]"
+                title="Email"
               >
                 <Mail size={20} />
+              </a>
+              <a
+                href="/srisRESUME.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 rounded-full font-bold text-sm text-black transition-all shadow-md shadow-cyan-500/20"
+              >
+                <FileText size={16} /> Resume
               </a>
             </div>
           </div>
