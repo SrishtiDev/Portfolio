@@ -1,98 +1,95 @@
 import React from 'react';
+import { FileText } from 'lucide-react';
 
-const Card = ({ children, className = "" }) => (
-  <div className={`rounded-xl p-0.5 shadow-[0_10px_25px_10px_rgba(4,57,57,0.2)] ${className}`}>
-    <div className="h-full w-full rounded-xl bg-transparent p-5">
-      {children}
-    </div>
-  </div>
-);
+const skillCategories = [
+  {
+    title: "AI / ML & Agents",
+    skills: ["LangChain.js", "LangGraph.js", "Qdrant", "BullMQ", "RAG Pipelines", "Vector Retrieval", "LLM Orchestration", "Prompt Engineering"]
+  },
+  {
+    title: "Backend Engineering",
+    skills: ["Node.js", "NestJS", "Express.js", "REST", "Middleware", "WebSocket", "PostgreSQL", "Redis", "MySQL", "TypeORM", "Firebase", "RBAC"]
+  },
+  {
+    title: "Languages",
+    skills: ["TypeScript", "JavaScript (ES6+)", "Java"]
+  },
+  {
+    title: "Frontend Development",
+    skills: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "HTML5", "CSS3"]
+  },
+  {
+    title: "DevOps & Infrastructure",
+    skills: ["Git", "GitHub Actions (CI/CD)", "Vercel", "Docker", "AWS (EC2, S3)", "Nginx", "PM2", "Linux (Ubuntu)"]
+  }
+];
 
 const Skills = () => {
   return (
-    <div id="skills" className="flex h-fit flex-col items-center justify-center pt-20">
-      <h1 className="mb-8 text-center text-5xl font-bold tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>
+    <section id="skills" className="flex flex-col items-center justify-center pt-20 pb-10">
+      <h1 className="mb-12 text-center text-5xl font-bold tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>
         SKILLS
       </h1>
 
-      <div className="grid w-[90%] grid-cols-1 gap-x-10 gap-y-5 md:w-[600px] lg:w-2/3 lg:grid-cols-3">
-        
-        {/* Skills List Card */}
-        <Card className="bg-gradient-to-br from-[#101010] to-[#202020]">
-          <div className="flex flex-col items-start justify-start gap-4 text-left">
-            <div>
-              <div className="text-xl font-bold text-white mb-1">Backend Engineering</div>
-              <div className="flex flex-row flex-wrap items-center justify-start gap-x-1 gap-y-1 text-sm text-gray-400">
-                <div>Java,</div>
-                <div>Spring Boot,</div>
-                <div>Spring Security,</div>
-                <div>RESTful APIs,</div>
-                <div>Hibernate/JPA</div>
+      <div className="w-[90%] md:w-[750px] lg:w-[950px] space-y-6">
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((cat, idx) => (
+            <div 
+              key={idx}
+              className={`rounded-2xl p-0.5 bg-gradient-to-br from-[#181824] via-[#242436] to-[#101018] shadow-[0_8px_20px_rgba(0,150,255,0.08)] hover:shadow-[0_8px_25px_rgba(0,150,255,0.15)] transition-all duration-300 ${idx === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+            >
+              <div className="bg-[#12121a]/90 h-full rounded-2xl p-6 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-cyan-400 mb-4 pb-2 border-b border-gray-800">
+                    {cat.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.skills.map((skill, sIdx) => (
+                      <span 
+                        key={sIdx}
+                        className="bg-[#1e1e2d] text-gray-200 border border-gray-800 hover:border-cyan-500/50 hover:text-cyan-300 rounded-lg px-3 py-1 text-xs font-semibold transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div>
-              <div className="text-xl font-bold text-white mb-1">Frontend Development</div>
-              <div className="flex flex-row flex-wrap items-center justify-start gap-x-1 gap-y-1 text-sm text-gray-400">
-                <div>React.js,</div>
-                <div>JavaScript (ES6+),</div>
-                <div>Tailwind CSS,</div>
-                <div>Redux Toolkit</div>
-              </div>
-            </div>
+          ))}
 
-            <div>
-              <div className="text-xl font-bold text-white mb-1">Databases & Cloud</div>
-              <div className="flex flex-row flex-wrap items-center justify-start gap-x-1 gap-y-1 text-sm text-gray-400">
-                <div>PostgreSQL,</div>
-                <div>MySQL,</div>
-                <div>MongoDB,</div>
-                <div>Docker</div>
+          {/* Overview & Resume Card */}
+          <div className="md:col-span-2 lg:col-span-1 rounded-2xl p-0.5 bg-gradient-to-br from-[#1a2536] via-[#111827] to-[#0f172a] shadow-[0_8px_20px_rgba(0,150,255,0.1)]">
+            <div className="bg-[#0b1120]/90 h-full rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Technical Expertise
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  Specializing in production-grade LLM orchestration, fault-tolerant RAG architectures, multi-agent workflows with LangGraph, and async worker queues.
+                </p>
+                <p className="text-gray-400 text-xs leading-relaxed">
+                  Proven track record in optimizing backend latency, cutting cloud LLM spend, and building zero-dependency auth systems.
+                </p>
               </div>
-            </div>
 
-            <div>
-              <div className="text-xl font-bold text-white mb-1">Core Fundamentals</div>
-              <div className="flex flex-row flex-wrap items-center justify-start gap-x-1 gap-y-1 text-sm text-gray-400">
-                <div>Data Structures,</div>
-                <div>Algorithms,</div>
-                <div>OOP,</div>
-                <div>DBMS</div>
+              <div className="pt-6 border-t border-gray-800/80 mt-4">
+                <a 
+                  href="/srisRESUME.pdf" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black hover:from-cyan-300 hover:to-blue-400 rounded-xl px-5 py-2.5 font-bold text-sm transition-all shadow-md shadow-cyan-500/20"
+                >
+                  <FileText size={16} /> View Full Resume
+                </a>
               </div>
             </div>
           </div>
-        </Card>
-
-        {/* Info & Resume Card */}
-        <Card className="bg-gradient-to-br from-[#202020] to-[#101010] lg:col-span-2">
-          <div className="flex h-full flex-col justify-between w-full lg:w-4/5">
-            <div className="mb-6 text-gray-300">
-              <p className="mb-4 leading-relaxed">
-                I primarily work on complex web applications, handling both backend architecture and frontend interfaces. My specialization lies in enterprise Java Spring Boot systems connected to highly responsive React user interfaces.
-              </p>
-              <p className="mb-4 leading-relaxed">
-                Beyond my core stack, I have strong competencies in database management, object-oriented design, and algorithms, allowing me to build scalable and optimized software solutions from the ground up.
-              </p>
-              <p className="mb-4 leading-relaxed">
-                Full resume available upon request via <a href="mailto:rawat.srishti1010@gmail.com" className="text-[#0096ff] hover:underline">Email</a>.
-              </p>
-            </div>
-            
-            <div className="text-center lg:text-left mt-auto">
-              <a 
-                href="/S_Resume.pdf" 
-                target="_blank" 
-                rel="noreferrer"
-                className="inline-block bg-[#0096ff] text-black hover:bg-white rounded-full px-6 py-2.5 font-bold transition-colors duration-300"
-              >
-                View Resume
-              </a>
-            </div>
-          </div>
-        </Card>
+        </div>
 
       </div>
-    </div>
+    </section>
   );
 };
 
