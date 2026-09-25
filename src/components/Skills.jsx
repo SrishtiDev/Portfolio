@@ -12,7 +12,7 @@ const skillCategories = [
   },
   {
     title: "Languages",
-    skills: ["TypeScript", "JavaScript (ES6+)", "Java"]
+    skills: ["TypeScript", "JavaScript (ES6+)", "Java", "Python"]
   },
   {
     title: "Frontend Development",
@@ -35,7 +35,7 @@ const Skills = () => {
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((cat, idx) => (
-            <div 
+            <div
               key={idx}
               className={`rounded-2xl p-0.5 bg-gradient-to-br from-[#181824] via-[#242436] to-[#101018] shadow-[0_8px_20px_rgba(0,150,255,0.08)] hover:shadow-[0_8px_25px_rgba(0,150,255,0.15)] transition-all duration-300 ${idx === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
             >
@@ -46,7 +46,7 @@ const Skills = () => {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill, sIdx) => (
-                      <span 
+                      <span
                         key={sIdx}
                         className="bg-[#1e1e2d] text-gray-200 border border-gray-800 hover:border-cyan-500/50 hover:text-cyan-300 rounded-lg px-3 py-1 text-xs font-semibold transition-colors"
                       >
@@ -75,9 +75,9 @@ const Skills = () => {
               </div>
 
               <div className="pt-6 border-t border-gray-800/80 mt-4">
-                <a 
-                  href="/srisRESUME.pdf" 
-                  target="_blank" 
+                <a
+                  href="/srisRESUME.pdf"
+                  target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black hover:from-cyan-300 hover:to-blue-400 rounded-xl px-5 py-2.5 font-bold text-sm transition-all shadow-md shadow-cyan-500/20"
                 >
