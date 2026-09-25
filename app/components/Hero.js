@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="hero" className="pt-24 pb-12 border-b border-zinc-200 dark:border-zinc-800/80">
       <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8">
-        
+
         {/* Profile Avatar */}
         <div className="relative shrink-0 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 w-24 h-24 sm:w-28 sm:h-28 shadow-lg shadow-cyan-950/20">
           <img
@@ -23,12 +23,12 @@ export default function Hero() {
             </h1>
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-200 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-400 text-xs font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-              Available for AI / Backend Roles
+              Available for Work
             </span>
           </div>
 
           <p className="text-base sm:text-lg font-semibold text-cyan-600 dark:text-cyan-400 leading-snug mb-3">
-            AI/backend engineer shipping production LLM systems end-to-end.
+            Full-stack Engineer • LLM Systems and Backend Infrastructure
           </p>
 
           <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mb-6 font-normal">

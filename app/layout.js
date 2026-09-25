@@ -2,12 +2,12 @@ import './globals.css';
 import { ThemeProvider } from './components/ThemeProvider';
 
 export const metadata = {
-  title: 'Srishti Rawat — AI / Backend Engineer',
+  title: 'Srishti Rawat — Full-stack Engineer',
   description:
     'Full-stack engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents, BullMQ worker architecture, and agentic workflows.',
   metadataBase: new URL('https://portfolio-srishti-rwt.vercel.app'),
   openGraph: {
-    title: 'Srishti Rawat — AI / Backend Engineer',
+    title: 'Srishti Rawat — Full-stack Engineer',
     description:
       'Full-stack engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents, BullMQ worker architecture, and agentic workflows.',
     url: 'https://portfolio-srishti-rwt.vercel.app',
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Srishti Rawat — AI / Backend Engineer',
+    title: 'Srishti Rawat — Full-stack Engineer',
     description:
       'Full-stack engineer shipping production LLM systems end-to-end. Architected NestJS RAG pipelines over 50,000+ documents.',
     images: ['/srishti.jpg'],
