@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import GitHubCalendar from 'react-github-calendar';
+import { GitHubCalendar } from 'react-github-calendar';
 import { GitCommit } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
