@@ -4,6 +4,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import NetworkLine from './components/NetworkLine';
@@ -15,6 +16,7 @@ const navLinks = [
   { label: "Experience", link: "#experience" },
   { label: "Skills", link: "#skills" },
   { label: "Projects", link: "#projects" },
+  { label: "Achievements", link: "#achievements" },
   { label: "Contact", link: "#contact" },
 ];
 
@@ -34,6 +36,8 @@ function App() {
           <Skills />
           <NetworkLine height="70px" />
           <Projects />
+          <NetworkLine height="70px" />
+          <Achievements />
           <NetworkLine height="70px" />
           <Contact />
         </main>
