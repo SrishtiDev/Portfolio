@@ -24,10 +24,10 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-10 border-b border-zinc-800/80 scroll-mt-16">
+    <section id="achievements" className="py-10 border-b border-zinc-200 dark:border-zinc-800/80 scroll-mt-16">
       <div className="flex items-center gap-2 mb-6">
-        <Award className="w-4 h-4 text-cyan-400" />
-        <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-400">
+        <Award className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+        <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
           Achievements & Open Source
         </h2>
       </div>
@@ -38,28 +38,28 @@ export default function Achievements() {
           return (
             <div
               key={idx}
-              className="group relative rounded-xl border border-zinc-800/90 bg-zinc-950/60 p-5 transition-all hover:border-zinc-700 hover:bg-zinc-900/40 flex flex-col justify-between"
+              className="group relative rounded-xl border border-zinc-200 dark:border-zinc-800/90 bg-zinc-50/60 dark:bg-zinc-950/60 p-5 transition-all hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-100/50 dark:hover:bg-zinc-900/40 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="text-xs font-semibold text-cyan-700 dark:text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
                     <Icon size={14} />
                     {item.category}
                   </span>
 
-                  <span className="px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-400 border border-zinc-800 text-xs font-mono">
+                  <span className="px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 text-xs font-mono">
                     {item.tag}
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center gap-1.5 mb-2">
+                <h3 className="text-base font-bold text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors flex items-center gap-1.5 mb-2">
                   {item.title}
                   {item.link && (
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-zinc-500 hover:text-white transition-colors"
+                      className="text-zinc-400 hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white transition-colors"
                       title="View GitHub Repository"
                     >
                       <ExternalLink size={14} />
@@ -67,7 +67,7 @@ export default function Achievements() {
                   )}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
                   {item.description}
                 </p>
               </div>

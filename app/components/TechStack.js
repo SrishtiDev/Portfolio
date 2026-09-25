@@ -19,12 +19,15 @@ const techItems = [
   { name: 'Next.js', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', color: '#FFFFFF' },
   { name: 'Tailwind CSS', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', color: '#06B6D4' },
   { name: 'Framer Motion', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg', color: '#0055FF' },
+  { name: 'HTML5', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', color: '#E34F26' },
+  { name: 'CSS3', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: '#1572B6' },
   { name: 'LangChain.js', iconUrl: 'https://cdn.simpleicons.org/langchain/1C3C3C', color: '#38BDF8' },
   { name: 'LangGraph.js', iconUrl: 'https://cdn.simpleicons.org/langchain/00E676', color: '#00E676' },
   { name: 'Qdrant', iconUrl: 'https://cdn.simpleicons.org/qdrant/00D2FF', color: '#00D2FF' },
   { name: 'BullMQ', iconUrl: 'https://cdn.simpleicons.org/redis/E11D48', color: '#E11D48' },
   { name: 'Docker', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', color: '#2496ED' },
   { name: 'AWS', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', color: '#FF9900' },
+  { name: 'Linux', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', color: '#FCC624' },
   { name: 'GitHub Actions', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', color: '#2088FF' },
   { name: 'Nginx', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg', color: '#009639' },
   { name: 'Git', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', color: '#F05032' },
@@ -32,10 +35,10 @@ const techItems = [
 
 export default function TechStack() {
   return (
-    <section id="skills" className="py-10 border-b border-zinc-800/80 scroll-mt-16">
+    <section id="skills" className="py-10 border-b border-zinc-200 dark:border-zinc-800/80 scroll-mt-16">
       <div className="flex items-center gap-2 mb-6">
-        <Cpu className="w-4 h-4 text-cyan-400" />
-        <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-400">
+        <Cpu className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+        <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
           Tech Stack
         </h2>
       </div>
@@ -44,7 +47,7 @@ export default function TechStack() {
         {techItems.map((tech, idx) => (
           <div
             key={idx}
-            className="group flex items-center gap-3 p-3 rounded-xl border border-zinc-800/90 bg-zinc-950/60 hover:bg-zinc-900/80 hover:border-zinc-700 transition-all cursor-default"
+            className="group flex items-center gap-3 p-3 rounded-xl border border-zinc-200 dark:border-zinc-800/90 bg-zinc-50/60 dark:bg-zinc-950/60 hover:bg-zinc-100 dark:hover:bg-zinc-900/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all cursor-default"
           >
             <div className="w-7 h-7 shrink-0 flex items-center justify-center">
               <img
@@ -57,7 +60,7 @@ export default function TechStack() {
                 }}
               />
             </div>
-            <span className="text-xs font-semibold text-zinc-300 group-hover:text-white transition-colors truncate">
+            <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors truncate">
               {tech.name}
             </span>
           </div>

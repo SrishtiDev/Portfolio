@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, FileText, Github, Linkedin, Mail } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const navItems = [
   { label: 'Experience', href: '#experience' },
@@ -40,10 +41,10 @@ export default function Navbar() {
   return (
     <>
       {/* Top Header Bar */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-zinc-800/80 transition-colors">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800/80 transition-colors">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 font-bold text-sm tracking-tight text-white hover:text-cyan-400 transition-colors">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+          <a href="#" className="flex items-center gap-2 font-bold text-sm tracking-tight text-zinc-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
             Srishti Rawat
           </a>
 
@@ -55,8 +56,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`text-xs font-medium transition-colors ${
                   activeSection === item.href.substring(1)
-                    ? 'text-cyan-400 font-semibold'
-                    : 'text-zinc-400 hover:text-zinc-200'
+                    ? 'text-cyan-600 dark:text-cyan-400 font-semibold'
+                    : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
                 }`}
               >
                 {item.label}
@@ -66,19 +67,20 @@ export default function Navbar() {
 
           {/* Quick Actions & Mobile Hamburger */}
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <a
               href="/srisRESUME.pdf"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 rounded-md text-xs font-medium transition-all"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-900 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700/80 rounded-md text-xs font-medium transition-all"
             >
-              <FileText size={13} className="text-cyan-400" />
+              <FileText size={13} className="text-cyan-600 dark:text-cyan-400" />
               <span>Resume</span>
             </a>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-1.5 rounded-md text-zinc-400 hover:text-white hover:bg-zinc-900 border border-zinc-800 focus:outline-none"
+              className="md:hidden p-1.5 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 focus:outline-none transition-colors"
               aria-label="Toggle Navigation Menu"
             >
               {isOpen ? <X size={18} /> : <Menu size={18} />}
@@ -89,7 +91,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="fixed inset-x-0 top-14 z-40 bg-zinc-950 border-b border-zinc-800 p-4 md:hidden shadow-2xl space-y-3">
+        <div className="fixed inset-x-0 top-14 z-40 bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 p-4 md:hidden shadow-2xl space-y-3">
           <div className="flex flex-col gap-2">
             {navItems.map((item) => (
               <a
@@ -98,8 +100,8 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   activeSection === item.href.substring(1)
-                    ? 'bg-zinc-900 text-cyan-400 font-semibold border-l-2 border-cyan-400'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-900'
+                    ? 'bg-zinc-100 dark:bg-zinc-900 text-cyan-600 dark:text-cyan-400 font-semibold border-l-2 border-cyan-500 dark:border-cyan-400'
+                    : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
                 }`}
               >
                 {item.label}
@@ -107,14 +109,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-around text-zinc-400">
-            <a href="https://github.com/SrishtiDev" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs hover:text-white">
+          <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800/80 flex items-center justify-around text-zinc-600 dark:text-zinc-400">
+            <a href="https://github.com/SrishtiDev" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs hover:text-zinc-900 dark:hover:text-white">
               <Github size={14} /> GitHub
             </a>
-            <a href="https://linkedin.com/in/srishtirwt" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs hover:text-white">
+            <a href="https://linkedin.com/in/srishtirwt" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs hover:text-zinc-900 dark:hover:text-white">
               <Linkedin size={14} /> LinkedIn
             </a>
-            <a href="mailto:rawat.srishti1010@gmail.com" className="flex items-center gap-1.5 text-xs hover:text-white">
+            <a href="mailto:rawat.srishti1010@gmail.com" className="flex items-center gap-1.5 text-xs hover:text-zinc-900 dark:hover:text-white">
               <Mail size={14} /> Email
             </a>
           </div>

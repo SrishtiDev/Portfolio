@@ -1,4 +1,5 @@
 import './globals.css';
+import { ThemeProvider } from './components/ThemeProvider';
 
 export const metadata = {
   title: 'Srishti Rawat — AI / Backend Engineer',
@@ -37,9 +38,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark h-full">
-      <body className="min-h-full flex flex-col bg-black text-zinc-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
-        {children}
+    <html lang="en" suppressHydrationWarning className="h-full">
+      <body className="min-h-full flex flex-col bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-900 dark:selection:text-cyan-200 transition-colors">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
