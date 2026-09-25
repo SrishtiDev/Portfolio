@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { motion, AnimatePresence } from "framer-motion"
-import { Home, User, Briefcase, Code, Folder, Mail } from "lucide-react"
+import { Home, User, Briefcase, Code, Folder, Trophy, Mail } from "lucide-react"
 
 interface DockMorphProps {
   className?: string
@@ -44,6 +44,7 @@ export default function DockMorph({ items, className, position = "bottom" }: Doc
           { icon: Briefcase, label: "Experience", onClick: () => handleScroll("#experience") },
           { icon: Code, label: "Skills", onClick: () => handleScroll("#skills") },
           { icon: Folder, label: "Projects", onClick: () => handleScroll("#projects") },
+          { icon: Trophy, label: "Achievements", onClick: () => handleScroll("#achievements") },
           { icon: Mail, label: "Contact", onClick: () => handleScroll("#contact") },
         ]
 
