@@ -18,7 +18,7 @@ const projects = [
     name: 'Selvedge CRM',
     subtitle: 'AI-native autonomous marketing campaign agent & event-driven monorepo.',
     link: null,
-    github: null,
+    github: 'https://github.com/SrishtiDev/Selvedge',
     bullets: [
       'Architected an AI-native CRM agent on LangGraph (ReAct) + Google Gemini with 5 tool-calling functions — turns natural-language marketing intent into fully executed campaigns, zero manual query building.',
       'Built an async, event-driven messaging pipeline across a 3-service NestJS monorepo — BullMQ + Upstash Redis, concurrency-5 job processing with webhook-based tracking across 5 live delivery states.',
@@ -30,7 +30,7 @@ const projects = [
     name: 'HireOrbit',
     subtitle: 'Multi-model AI pipeline simulating enterprise ATS resume scoring.',
     link: 'https://hire-orbit-weld.vercel.app',
-    github: null,
+    github: 'https://github.com/SrishtiDev/HireOrbit',
     bullets: [
       "Cut ATS scoring latency from ~30s to under 1.5s by migrating inference to Groq's LPU-based API, layered with Redis caching on JD keyword sets — validated across 30+ users spanning SDE, Data Science, and PM roles.",
       'Designed a RESTful 3-stage inference API — JD keyword extraction → resume-JD scoring → LaTeX generation — with middleware-style JSON schema validation enforcing deterministic outputs across concurrent stateless requests.',

@@ -8,7 +8,7 @@ const achievements = [
     description:
       'Merged PR adding equals() and hashCode() to FieldValue, fixing silent reference-equality failures; backported to the 3.x branch.',
     icon: GitPullRequest,
-    link: 'https://github.com/opensearch-project/opensearch-java',
+    link: 'https://github.com/opensearch-project/opensearch-java/pull/1998',
     tag: 'AWS OpenSearch',
   },
   {
