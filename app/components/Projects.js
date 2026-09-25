@@ -15,7 +15,7 @@ const projects = [
   },
   {
     name: 'Selvedge CRM',
-    image: '/dea.png',
+    image: '/selvedge.png',
     status: 'Source',
     description: 'AI-native autonomous marketing campaign agent & event-driven NestJS monorepo supporting 5 delivery states and natural-language audience segmentation.',
     link: null,
@@ -31,7 +31,17 @@ const projects = [
     github: 'https://github.com/SrishtiDev/HireOrbit',
     tags: ['Next.js', 'Node.js', 'Express', 'Redis', 'Docker', 'Groq API'],
   },
+  {
+    name: 'DEA',
+    image: '/dea.png',
+    status: 'Source',
+    description: 'A full-stack web application built for real-world use-case. Shipped end-to-end with a modern tech stack.',
+    link: null,
+    github: null,
+    tags: [],
+  },
 ];
+
 
 export default function Projects() {
   return (
