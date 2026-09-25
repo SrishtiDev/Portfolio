@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -11,6 +12,7 @@ import { HoverNavigation } from './components/ui/NavigationBar';
 const navLinks = [
   { label: "Home", link: "#home" },
   { label: "Background", link: "#about" },
+  { label: "Experience", link: "#experience" },
   { label: "Skills", link: "#skills" },
   { label: "Projects", link: "#projects" },
   { label: "Contact", link: "#contact" },
@@ -26,6 +28,8 @@ function App() {
           <Hero />
           <NetworkLine height="70px" />
           <About />
+          <NetworkLine height="70px" />
+          <Experience />
           <NetworkLine height="70px" />
           <Skills />
           <NetworkLine height="70px" />
